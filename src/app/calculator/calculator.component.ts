@@ -10,8 +10,13 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './calculator.component.css'
 })
 export class CalculatorComponent {
+  result: number = 0;
+
   onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+    let numA: number = f.value.numA
+    let numB: number = f.value.numB
+    let operator: string = f.value.operator
+
+    this.result = eval(`${numA}${operator}${numB}`)
   }
 }
