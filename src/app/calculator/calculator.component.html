@@ -1,0 +1,12 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input name="numA" placeholder="numA" ngModel>
+    <input name="numB" placeholder="numB" ngModel>
+    <select name="operator" ngModel>
+        <option value="sum">+</option>
+        <option value="subtraction">-</option>
+        <option value="multiply">x</option>
+        <option value="divide">/</option>
+    </select>
+
+    <button type="submit">Calcular</button>
+</form>
