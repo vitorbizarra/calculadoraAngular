@@ -1,14 +1,26 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-    <input name="numA" placeholder="numA" ngModel>
-    <input name="numB" placeholder="numB" ngModel>
-    <select name="operator" ngModel>
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">x</option>
-        <option value="/">/</option>
-    </select>
+<form class="d-flex flex-column gap-4" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
 
-    <button type="submit">Calcular</button>
+    <div class="input-group ">
+        <span class="input-group-text">X</span>
+        <input type="number" name="numA" ngModel class="form-control">
+    </div>
+
+    <div class="input-group ">
+        <span class="input-group-text">Y</span>
+        <input type="number" name="numB" ngModel class="form-control">
+    </div>
+
+    <div>
+        <label for="basic-url" class="form-label">Operação</label>
+        <select name="operator" ngModel class="form-select">
+            <option value="+" selected>Somar</option>
+            <option value="-">Subtrair</option>
+            <option value="*">Multiplicar</option>
+            <option value="/">Dividir</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calcular</button>
 
     <h1>Resultado: {{ result }}</h1>
 </form>
